@@ -15,10 +15,10 @@
 </script>
 
 <script>
-	/** @type {import('./$types').PageData} */
-	export let data;
+	// /** @type {import('./$types').PageData} */
+	// export let data;
 </script>
 
 <div>this page is not working lol</div>
 
-<div>{data}</div>
+<!-- <div>{data}</div> -->
