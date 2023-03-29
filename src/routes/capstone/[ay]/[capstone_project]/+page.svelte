@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { CapstoneProject } from '$lib/ProjectTypes';
+	import UserCard from '$lib/UserCard.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -30,15 +31,11 @@
 	<section class="col-start-1">
 		<h2>Project Contributors</h2>
 		{#each project.attributes.users.data as user}
-			<div>
-				<img
-					src="https://hcd-lab.student.rit.edu/hcd-hub/strapi
-					{user.attributes.avatar?.formats?.thumbnail?.url}"
-					alt="{user.attributes.username}'s avatar"
-					class="max-h-16 min-h-[4rem] border-solid border-2 border-slate-400 shadow-slate-300 shadow-md rounded-md m-4"
-				/>
-				<h3><a href="/users/{user.id}">{user.attributes.username}</a></h3>
-			</div>
+			<UserCard
+				userId={user.id}
+				username={user.attributes.username}
+				avatarLink={user.attributes.avatar?.data?.attributes?.formats?.thumbnail?.url}
+			/>
 		{/each}
 	</section>
 	<aside class="">

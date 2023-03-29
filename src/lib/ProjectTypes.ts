@@ -13,8 +13,17 @@ export interface CapstoneProject {
     annual_year: AnnualYear;
     public_facing_reports: AllPFRs;
     Link: string;
-    users: GroupedUser;
+    users: MultipleUsers;
   };
+}
+
+export interface ShortCapstoneProject {
+  id: number,
+  Title: string
+  Description: string
+  createdAt: string
+  updatedAt: string
+  Link: string
 }
 
 export interface SingleCapstoneProject {
@@ -129,9 +138,62 @@ export interface User {
     createdAt: string;
     updatedAt: string;
   };
-  capstone_projects: CapstoneProject[];
+  capstone_projects: ShortCapstoneProject[];
 }
 
 export interface GroupedUser {
-  data: User;
+  id: number;
+  attributes: {
+    username: string;
+    email: string;
+    provider: string;
+    confirmed: boolean;
+    blocked: boolean;
+    createdAt: string;
+    updatedAt: string;
+    role: {
+      id: number;
+      name: string;
+      description: string;
+      type: string;
+      createdAt: string;
+      updatedAt: string;
+    };
+    avatar: {
+      data: {
+        id: number;
+        attributes: {
+          name: string;
+          alternativeText: string | null;
+          caption: string | null;
+          width: number;
+          height: number;
+          formats: {
+            thumbnail: {
+              name: string;
+              hash: string;
+              ext: string;
+              mime: string;
+              path: string | null;
+              width: number;
+              height: number;
+              size: number;
+              url: string;
+            };
+          };
+          hash: string;
+          ext: string;
+          mime: string;
+          size: number;
+          url: string;
+          previewUrl: string | null;
+          provider: string;
+          provider_metadata: string | null;
+          createdAt: string;
+          updatedAt: string;
+        }
+      }
+    };
+    capstone_projects: CapstoneProject[];
+  }
 }

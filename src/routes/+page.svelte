@@ -20,14 +20,14 @@
 	<section class="mx-4 grid grid-flow-row grid-cols-1 md:grid-cols-3 gap-6">
 		{#each projects as project}
 			<ProjectCard
-				URL={project.attributes.annual_year.data.attributes.Year + '/' + project.id}
-				Logo={project.attributes.Logo?.data?.attributes?.url}
-				Title={project.attributes.Title}
-				Description={project.attributes.Description}
-				Annual_Year={project.attributes.annual_year.data.attributes.Year}
+				URL={project.attributes?.annual_year.data.attributes?.Year + '/' + project.id}
+				Logo={project.attributes?.Logo?.data?.attributes?.url}
+				Title={project.attributes?.Title}
+				Description={project.attributes?.Description}
+				Annual_Year={project.attributes?.annual_year.data.attributes?.Year}
 				Num_PFRs={project.attributes.public_facing_reports?.data?.length}
-				Link={project.attributes.Link}
-				Num_Users={project.attributes.users?.data?.length}
+				Link={project.attributes?.Link}
+				Num_Users={project.attributes?.users?.data?.length}
 			/>
 		{/each}
 	</section>

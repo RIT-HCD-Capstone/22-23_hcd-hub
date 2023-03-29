@@ -61,7 +61,10 @@
 	  ```
   -->
 
-<a href={URL} class="p-4 border-2 rounded-lg hover:border-black hover:bg-slate-50 grid grid-cols-3">
+<a
+	href="/capstone/{URL}"
+	class="p-4 border-2 rounded-lg hover:border-black hover:bg-slate-50 grid grid-cols-3"
+>
 	{#if Logo !== null}
 		<img
 			src="https://hcd-lab.student.rit.edu/hcd-hub/strapi{Logo}"

@@ -16,10 +16,20 @@
 			src="https://hcd-lab.student.rit.edu/hcd-hub/strapi
 		{user.avatar?.url}"
 			alt="{user.username}'s profile picture"
-			class="max-h-16 min-h-[4rem] border-solid border-2 border-slate-400 shadow-slate-300 shadow-md rounded-md m-4"
+			class="max-h-16 min-h-[4rem] rounded-full m-4 border-black border-2"
 		/>
 		<h1>{user.username}</h1>
 	</header>
+	<aside>
+		<h2>Projects</h2>
+		{#each user.capstone_projects as project}
+			<a
+				href="/capstone/AY (22-23)/{project.id}"
+				class="border-2 rounded-md p-2 m-2 max-w-max border-slate-700 hover:transition-all hover:text-white hover:border-white hover:bg-slate-700"
+				>{project.Title}</a
+			>
+		{/each}
+	</aside>
 	<!-- <p>{user.attributes.Description}</p>
 	<aside class="">
 		<h2>Public Facing Reports</h2>
