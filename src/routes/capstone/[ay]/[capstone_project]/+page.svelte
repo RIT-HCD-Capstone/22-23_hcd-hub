@@ -23,12 +23,14 @@
 		<h1>{project.attributes.Title}</h1>
 	</header>
 	<p>{project.attributes.Description}</p>
-	<a
-		href={project.attributes.Link}
-		target="_blank"
-		class="place-self-center p-2 rounded-md border-2 border-slate-700 hover:transition-all hover:text-white hover:border-white hover:bg-slate-700 hover:after:content-[&#10132;]"
-		>Project Website</a
-	>
+	{#if project.attributes.Link !== null}
+		<a
+			href={project.attributes.Link}
+			target="_blank"
+			class="place-self-center p-2 rounded-md border-2 border-slate-700 hover:transition-all hover:text-white hover:border-white hover:bg-slate-700 hover:after:content-[&#10132;]"
+			>Project Website</a
+		>
+	{/if}
 	<section class="col-start-1">
 		<h2>Project Contributors</h2>
 		{#each project.attributes.users.data as user}

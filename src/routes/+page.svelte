@@ -1,13 +1,13 @@
 <script lang="ts">
 	import ProjectCard from '$lib/ProjectCard.svelte';
-	import type { AllCapstoneProjects } from '$lib/ProjectTypes';
+	import type { CapstoneProject } from '$lib/ProjectTypes';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
-	let projects = <AllCapstoneProjects>data.data;
-	console.log('projects: ' + projects);
-	console.log('projects.length: ' + projects.length);
-	console.log('projects.toString(): ' + projects.toString());
+	let projects = <CapstoneProject[]>data.data;
+	// console.log('projects: ' + projects);
+	// console.log('projects.length: ' + projects.length);
+	// console.log('projects.toString(): ' + projects.toString());
 </script>
 
 <svelte:head>

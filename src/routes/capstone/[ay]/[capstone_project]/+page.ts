@@ -1,12 +1,9 @@
 import { json } from "@sveltejs/kit";
 import type { PageLoad } from "./$types";
-import type { MultipleCapstoneProject, ShortCapstoneProjects, SingleCapstoneProject } from "$lib/ProjectTypes";
+import type { ShortCapstoneProjects, SingleCapstoneProject } from "$lib/ProjectTypes";
 
 let data: SingleCapstoneProject;
 let targetProject: number;
-// let users: User[] = [];
-// let userData: AllUsers;
-// let filteredUserData: AllUsers;
 
 export const load = (async ({ fetch, params }) => {
   const req1 = await fetch(`https://hcd-lab.student.rit.edu/hcd-hub/strapi/api/capstone-projects`)
