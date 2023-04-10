@@ -85,6 +85,31 @@ export interface AnnualYear {
   };
 }
 
+export interface ShortAnnualYear {
+  id: number;
+  attributes: {
+    Year: string;
+    createdAt: string;
+    updatedAt: string;
+  };
+};
+
+export interface AllAnnualYears {
+  data: ShortAnnualYear[]
+}
+
+export interface SingleAnnualYear {
+  data: {
+    id: number;
+    attributes: {
+      Year: string;
+      createdAt: string;
+      updatedAt: string;
+      capstone_projects: AllCapstoneProjects;
+    };
+  };
+}
+
 export interface Logo {
   data: {
     id: number;

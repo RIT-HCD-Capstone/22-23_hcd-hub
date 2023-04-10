@@ -82,7 +82,9 @@
 		{/if}
 		<div class="flex flex-row w-full max-w-full justify-between gap-2 items-baseline">
 			<h2 class="max-w-[10ch] max-h-24 truncate" title={Title}>{Title}</h2>
-			<h3 class="text-neutral-500 justify-self-end">{Annual_Year}</h3>
+			<h3 class="text-neutral-500 justify-self-end hover:underline">
+				<a href="/capstone/{Annual_Year}">{Annual_Year}</a>
+			</h3>
 		</div>
 	</div>
 	<p class="col-span-3 max-h-60 overflow-scroll justify-self-start self-start">{Description}</p>
