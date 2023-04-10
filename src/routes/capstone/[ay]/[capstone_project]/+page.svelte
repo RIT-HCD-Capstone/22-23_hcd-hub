@@ -4,15 +4,16 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
-	let project = <CapstoneProject>data.data;
+	let project = <CapstoneProject>data;
+	console.log(project);
 </script>
 
 <svelte:head>
 	<title>{project.attributes.Title}</title>
 </svelte:head>
 
-<main class="m-4 grid md:grid-cols-2 gap-4">
-	<header class="flex items-center max-w-sm col-span-2">
+<div class="m-4 flex flex-col gap-4">
+	<header class="flex items-center max-w-full">
 		<img
 			src="https://hcd-lab.student.rit.edu/hcd-hub/strapi
 		{project.attributes.Logo?.data?.attributes?.url}"
@@ -33,8 +34,8 @@
 		{#each project.attributes.users.data as user}
 			<UserCard
 				userId={user.id}
-				username={user.attributes.username}
 				avatarLink={user.attributes.avatar?.data?.attributes?.formats?.thumbnail?.url}
+				username={user.attributes.username}
 			/>
 		{/each}
 	</section>
@@ -50,14 +51,11 @@
 			</article>
 		{/each}
 	</aside>
-
-	<!-- <ProjectCard
-		URL={project.attributes.annual_year.data.attributes.Year + '/' + project.id}
-		Logo={project.attributes.Logo?.data?.attributes?.url}
-		Title={project.attributes.Title}
-		Description={project.attributes.Description}
-		Annual_Year={project.attributes.annual_year.data.attributes.Year}
-		Num_PFRs={project.attributes.public_facing_reports?.data?.length}
-		Link={project.attributes.Link}
-	/> -->
-</main>
+	<!-- <section class="bg-red-800 w-full h-full">
+		<img
+			src="https://hcd-lab.student.rit.edu/hcd-hub/strapi/
+			{project.attributes.proposal.data.attributes.Document.data.attributes.url}"
+			alt=""
+		/>
+	</section> -->
+</div>

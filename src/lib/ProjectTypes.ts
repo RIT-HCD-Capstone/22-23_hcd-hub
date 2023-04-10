@@ -14,7 +14,36 @@ export interface CapstoneProject {
     public_facing_reports: AllPFRs;
     Link: string;
     users: MultipleUsers;
+    proposal: {
+      data: {
+        attributes: {
+          Document: {
+            data: {
+              attributes: {
+                url: string
+              }
+            }
+            Title: string
+          }
+        }
+      }
+    }
   };
+}
+
+export interface ShortCapstoneProjects {
+  data: MultipleCapstoneProject[]
+}
+
+export interface MultipleCapstoneProject {
+  id: number,
+  attributes: {
+    Title: string,
+    Description: string
+    createdAt: string
+    updatedAt: string
+    Link: string
+  }
 }
 
 export interface ShortCapstoneProject {
