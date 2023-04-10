@@ -10,7 +10,7 @@
 	<title>{user.username}</title>
 </svelte:head>
 
-<main class="m-4 grid grid-cols-2 gap-4">
+<div class="m-4 grid grid-cols-2 gap-4">
 	<header class="flex items-center max-w-sm col-span-2">
 		<img
 			src="https://hcd-lab.student.rit.edu/hcd-hub/strapi
@@ -43,4 +43,4 @@
 			</article>
 		{/each}
 	</aside> -->
-</main>
+</div>

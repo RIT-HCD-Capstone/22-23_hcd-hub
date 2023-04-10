@@ -14,13 +14,12 @@
 	<title>HCD Hub</title>
 </svelte:head>
 
-<main class="my-4">
+<div class="my-4">
 	<h1 class="text-3xl font-bold p-4">Humanities, Computing, and Design Hub</h1>
-	<!-- {data} -->
 	<section class="mx-4 grid grid-flow-row grid-cols-1 md:grid-cols-3 gap-6">
 		{#each projects as project}
 			<ProjectCard
-				URL={project.attributes?.annual_year.data.attributes?.Year + '/' + project.id}
+				URL={project.attributes?.annual_year.data.attributes?.Year + '/' + project.attributes.Title}
 				Logo={project.attributes?.Logo?.data?.attributes?.url}
 				Title={project.attributes?.Title}
 				Description={project.attributes?.Description}
@@ -31,4 +30,4 @@
 			/>
 		{/each}
 	</section>
-</main>
+</div>
