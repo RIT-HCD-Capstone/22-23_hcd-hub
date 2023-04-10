@@ -70,20 +70,22 @@
 
 <a
 	href="/capstone/{URL}"
-	class="p-4 border-2 rounded-lg hover:border-black hover:bg-slate-50 grid grid-cols-3"
+	class="p-4 border-2 rounded-lg hover:border-black hover:bg-slate-50 grid grid-cols-3 gap-2 grid-flow-row-dense"
 >
-	{#if Logo !== null}
-		<img
-			src="https://hcd-lab.student.rit.edu/hcd-hub/strapi{Logo}"
-			alt="{Title}'s logo"
-			class="max-h-16"
-		/>
-	{/if}
-	<div class="col-start-2 col-span-2 flex flex-row gap-2 items-baseline">
-		<h2>{Title}</h2>
-		<h3 class="text-neutral-500">{Annual_Year}</h3>
+	<div class="flex flex-row w-full col-span-3 justify-start items-center max-h-12 gap-2 py-2">
+		{#if Logo !== null}
+			<img
+				src="https://hcd-lab.student.rit.edu/hcd-hub/strapi{Logo}"
+				alt="{Title}'s logo"
+				class="max-h-16"
+			/>
+		{/if}
+		<div class="flex flex-row w-full max-w-full justify-between gap-2 items-baseline">
+			<h2 class="max-w-[10ch] max-h-24 truncate" title={Title}>{Title}</h2>
+			<h3 class="text-neutral-500 justify-self-end">{Annual_Year}</h3>
+		</div>
 	</div>
-	<p class="col-span-3">{Description}</p>
+	<p class="col-span-3 max-h-60 overflow-scroll justify-self-start self-start">{Description}</p>
 	{#if Num_PFRs !== null || Num_Users !== null}
 		<div class="col-span-2">
 			{#if Num_PFRs !== null}
@@ -95,10 +97,12 @@
 		</div>
 	{/if}
 
-	<a
-		href={Link}
-		target="_blank"
-		class="place-self-end p-2 rounded-md border-2 border-slate-700 hover:transition-all hover:text-white hover:border-white hover:bg-slate-700 hover:after:content-[&#10132;]"
-		>Project Website</a
-	>
+	{#if Link !== null}
+		<a
+			href={Link}
+			target="_blank"
+			class="place-self-start p-2 rounded-md border-2 border-slate-700 hover:transition-all hover:text-white hover:border-white hover:bg-slate-700 hover:after:content-[&#10132;]"
+			>Project Website</a
+		>
+	{/if}
 </a>
