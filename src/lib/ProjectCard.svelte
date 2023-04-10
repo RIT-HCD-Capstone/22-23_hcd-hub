@@ -22,6 +22,13 @@
 <!--
 	@component
 	ProjectCard provides a brief overview of the relevant information about each Capstone Project.
+
+	@param {string} Logo - path to the project's Logo.
+	@param {string} Title - the project's Title.
+	@param {string} Description - the Description of the project.
+	@param {string} Annual_Year - the current Annual Year.
+	@param {number} Num_PFRs - the number of existing PFRs.
+	@param {string} Link - an external link to the project site, if any.
 	- Example Usage:
 	  ```tsx
 	  <ProjectCard
