@@ -1,4 +1,3 @@
-import { json } from "@sveltejs/kit";
 import type { PageLoad } from "./$types";
 import type { User } from "$lib/ProjectTypes";
 
