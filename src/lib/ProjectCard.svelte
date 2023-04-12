@@ -89,12 +89,12 @@
 	</div>
 	<p class="col-span-3 max-h-60 overflow-scroll justify-self-start self-start">{Description}</p>
 	{#if Num_PFRs !== null || Num_Users !== null}
-		<div class="col-span-2">
-			{#if Num_PFRs !== null}
-				<p>Number of PFRs released: {Num_PFRs}</p>
-			{/if}
+		<div class="col-span-2 self-end">
 			{#if Num_Users !== null}
-				<p>Number of project members: {Num_Users}</p>
+				<p>Project Members: {Num_Users}</p>
+			{/if}
+			{#if Num_PFRs !== null}
+				<p>PFRs: {Num_PFRs}</p>
 			{/if}
 		</div>
 	{/if}
@@ -103,7 +103,7 @@
 		<a
 			href={Link}
 			target="_blank"
-			class="place-self-start p-2 rounded-md border-2 border-slate-700 hover:transition-all hover:text-white hover:border-white hover:bg-slate-700 hover:after:content-[&#10132;]"
+			class="place-self-end p-2 rounded-md border-2 border-slate-700 hover:transition-all hover:text-white hover:border-white hover:bg-slate-700 hover:after:content-[&#10132;]"
 			>Project Website</a
 		>
 	{/if}
