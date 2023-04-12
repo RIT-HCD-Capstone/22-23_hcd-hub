@@ -153,6 +153,9 @@ export interface User {
   blocked: boolean;
   createdAt: string;
   updatedAt: string;
+  pronouns: string;
+  title: string;
+  description: string;
   role: {
     id: number;
     name: string;
