@@ -70,14 +70,16 @@
 
 <a
 	href="/capstone/{URL}"
-	class="p-4 border-2 rounded-lg hover:border-black hover:bg-slate-50 grid grid-cols-3 gap-2 grid-flow-row-dense"
+	class="p-4 border-2 rounded-lg hover:border-black hover:bg-slate-50 flex flex-col gap-2 min-h-[24rem]"
 >
-	<div class="flex flex-row w-full col-span-3 justify-start items-center max-h-12 gap-2 py-2">
+	<div
+		class="flex flex-row w-full col-span-3 justify-start items-center max-h-12 gap-2 py-4 pb-6 border-b border-slate-200"
+	>
 		{#if Logo !== null}
 			<img
 				src="https://hcd-lab.student.rit.edu/hcd-hub/strapi{Logo}"
 				alt="{Title}'s logo"
-				class="max-h-16"
+				class="max-h-12 border-[1.5px] border-black rounded-md"
 			/>
 		{/if}
 		<div class="flex flex-row w-full max-w-full justify-between gap-2 items-baseline">
@@ -87,24 +89,27 @@
 			</h3>
 		</div>
 	</div>
-	<p class="col-span-3 max-h-60 overflow-scroll justify-self-start self-start">{Description}</p>
-	{#if Num_PFRs !== null || Num_Users !== null}
-		<div class="col-span-2 self-end">
-			{#if Num_Users !== null}
-				<p>Project Members: {Num_Users}</p>
-			{/if}
-			{#if Num_PFRs !== null}
-				<p>PFRs: {Num_PFRs}</p>
-			{/if}
-		</div>
-	{/if}
-
-	{#if Link !== null}
-		<a
-			href={Link}
-			target="_blank"
-			class="place-self-end p-2 rounded-md border-2 border-slate-700 hover:transition-all hover:text-white hover:border-white hover:bg-slate-700 hover:after:content-[&#10132;]"
-			>Project Website</a
-		>
-	{/if}
+	<p class="col-span-3 h-full w-full max-h-60 overflow-scroll justify-self-start self-start">
+		{Description}
+	</p>
+	<div class="w-full flex flex-row justify-between">
+		{#if Num_PFRs !== null || Num_Users !== null}
+			<div>
+				{#if Num_Users !== null}
+					<p>Project Members: {Num_Users}</p>
+				{/if}
+				{#if Num_PFRs !== null}
+					<p>PFRs: {Num_PFRs}</p>
+				{/if}
+			</div>
+		{/if}
+		{#if Link !== null}
+			<a
+				href={Link}
+				target="_blank"
+				class="place-self-end p-2 rounded-md border-2 border-slate-700 hover:transition-all hover:text-white hover:border-transparent hover:bg-slate-700 text-center"
+				>Project Website</a
+			>
+		{/if}
+	</div>
 </a>
