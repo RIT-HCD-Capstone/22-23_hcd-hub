@@ -40,59 +40,39 @@
 	    Link={'https://hcd-lab.student.rit.edu'}
 		/>
 	  ```
-	  ```tsx
-	  <ProjectCard
-	    Title={'A very nice title'}
-	    Description={'A very nice description'}
-	    Annual_Year={'AY (22-23)'}
-	    Num_PFRs={25}
-	    Link={'https://hcd-lab.student.rit.edu'}
-		/>
-	  ```
-	  ```tsx
-	  <ProjectCard
-	    Logo={'project_name/assets/logo.png'}
-	    Title={'A very nice title'}
-	    Description={'A very nice description'}
-	    Annual_Year={'AY (22-23)'}
-	    Link={'https://hcd-lab.student.rit.edu'}
-		/>
-	  ```
-	  ```tsx
-	  <ProjectCard
-	    Title={'A very nice title'}
-	    Description={'A very nice description'}
-	    Annual_Year={'AY (22-23)'}
-	    Link={'https://hcd-lab.student.rit.edu'}
-		/>
-	  ```
   -->
 
 <a
 	href="/capstone/{URL}"
-	class="p-4 border-2 rounded-lg hover:border-black hover:bg-slate-50 flex flex-col gap-2 min-h-[24rem]"
+	class="bg-slate-50 border-2 border-black hover:bg-slate-50 flex flex-col min-h-[22rem] transition-all duration-200 hover:drop-shadow-solid-0 drop-shadow-solid-1"
 >
-	<div
-		class="flex flex-row w-full col-span-3 justify-start items-center max-h-12 gap-2 py-4 pb-6 border-b border-slate-200"
-	>
-		{#if Logo !== null}
-			<img
-				src="https://hcd-lab.student.rit.edu/hcd-hub/strapi{Logo}"
-				alt="{Title}'s logo"
-				class="max-h-12 border-[1.5px] border-black rounded-md"
-			/>
-		{/if}
-		<div class="flex flex-row w-full max-w-full justify-between gap-2 items-baseline">
-			<h2 class="max-w-[10ch] max-h-24 truncate" title={Title}>{Title}</h2>
-			<h3 class="text-neutral-500 justify-self-end hover:underline">
-				<a href="/capstone/{Annual_Year}">{Annual_Year}</a>
-			</h3>
+	<div class="bg-slate-50 flex flex-col h-full">
+		<div class="flex flex-row w-full col-span-3 justify-start items-center max-h-16 gap-2 py-3">
+			{#if Logo !== null}
+				<img
+					src="https://hcd-lab.student.rit.edu/hcd-hub/strapi{Logo}"
+					alt="{Title}'s logo"
+					class="h-16 border-r-[1.5px] border-b-[1.5px] border-black"
+				/>
+			{/if}
+			<div class="flex flex-row w-full items-baseline justify-around">
+				{#if Logo !== null}
+					<h2 class="flex-grow max-w-[12ch] truncate" title={Title}>{Title}</h2>
+				{:else}
+					<h2 class="flex-grow truncate px-4" title={Title}>{Title}</h2>
+				{/if}
+				<h3 class="text-neutral-500 justify-self-end hover:underline pr-4">
+					<a href="/capstone/{Annual_Year}">{Annual_Year.slice(4, 9)}</a>
+				</h3>
+			</div>
 		</div>
+		<p class="p-4 col-span-3 h-full w-full max-h-60 overflow-scroll justify-self-start self-start">
+			{Description}
+		</p>
 	</div>
-	<p class="col-span-3 h-full w-full max-h-60 overflow-scroll justify-self-start self-start">
-		{Description}
-	</p>
-	<div class="w-full flex flex-row justify-between">
+	<div
+		class="w-full flex flex-row justify-between bg-gradient-to-br from-violet-600 to-indigo-600 text-white border-t-2 border-black p-4 place-self-end"
+	>
 		{#if Num_PFRs !== null || Num_Users !== null}
 			<div>
 				{#if Num_Users !== null}
@@ -107,7 +87,7 @@
 			<a
 				href={Link}
 				target="_blank"
-				class="place-self-end p-2 rounded-md border-2 border-slate-700 hover:transition-all hover:text-white hover:border-transparent hover:bg-slate-700 text-center"
+				class="place-self-end p-2 bg-black border-2 border-black hover:transition-all duration-150 hover:border-white text-center"
 				>Project Website</a
 			>
 		{/if}

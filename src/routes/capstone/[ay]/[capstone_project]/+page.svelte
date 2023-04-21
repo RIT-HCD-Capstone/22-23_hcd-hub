@@ -12,26 +12,32 @@
 	<title>{project.attributes.Title}</title>
 </svelte:head>
 
-<div class="m-4 flex flex-col gap-4">
-	<header class="flex items-center max-w-full">
+<header class="flex items-center max-w-full border-b-2 border-black">
+	{#if project.attributes.Logo?.data !== null}
 		<img
 			src="https://hcd-lab.student.rit.edu/hcd-hub/strapi
-		{project.attributes.Logo?.data?.attributes?.url}"
+	{project.attributes.Logo?.data?.attributes?.url}"
 			alt="{project.attributes.Title}'s logo"
-			class="max-h-16 min-h-[4rem] border-solid border-2 border-slate-400 shadow-slate-300 shadow-md rounded-md m-4"
+			class="h-28 border-r-[1.5px] border-black"
 		/>
-		<h1>{project.attributes.Title}</h1>
-	</header>
-	<p>{project.attributes.Description}</p>
-	{#if project.attributes.Link !== null}
-		<a
-			href={project.attributes.Link}
-			target="_blank"
-			class="place-self-center p-2 rounded-md border-2 border-slate-700 hover:transition-all hover:text-white hover:border-white hover:bg-slate-700 hover:after:content-[&#10132;]"
-			>Project Website</a
-		>
 	{/if}
-	<section class="col-start-1">
+	<h1 class="my-4 p-4">{project.attributes.Title}</h1>
+</header>
+<div class="w-11/12 m-auto flex flex-row flex-wrap mt-8">
+	<div class="w-full md:w-1/2">
+		<p>{project.attributes.Description}</p>
+	</div>
+	<div class="w-full md:w-1/2 flex justify-center items-center">
+		{#if project.attributes.Link !== null}
+			<a
+				href={project.attributes.Link}
+				target="_blank"
+				class="place-self-center p-2 bg-black text-white border-2 border-black hover:transition-all duration-150 hover:border-white text-center"
+				>Project Website</a
+			>
+		{/if}
+	</div>
+	<section class="w-full md:w-1/2">
 		<h2>Project Contributors</h2>
 		{#each project.attributes.users.data as user}
 			<UserCard
@@ -41,7 +47,7 @@
 			/>
 		{/each}
 	</section>
-	<aside class="">
+	<aside class="w-full md:w-1/2">
 		<h2>Public Facing Reports</h2>
 		{#each project.attributes.public_facing_reports.data as report}
 			<article class="pb-2 border-b last:border-none border-black">
