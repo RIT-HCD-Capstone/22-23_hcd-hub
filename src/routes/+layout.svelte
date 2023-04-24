@@ -21,20 +21,24 @@
 				? 'bg-brand-red'
 				: ''} p-4 border-l-2 border-black hover:bg-brand-green">Home</a
 		>
+
 		<a
-			href="/about"
-			class="{$page.route.id == '/about'
-				? 'bg-brand-red'
-				: ''} p-4 hidden md:inline border-l-2 border-black hover:bg-brand-green">About</a
-		>
-		<a
-			href="https://hcd-lab.student.rit.edu/hcd-hub/strapi/api/connect/auth0"
-			class="{$page.route.id == '/auth'
+			href="/login"
+			class="{$page.route.id == '/login'
 				? 'bg-brand-red'
 				: ''} p-4 md:border-r-2 border-l-2 border-black hover:bg-brand-green">Log In</a
 		>
 	</div>
 </nav>
-<main>
+<main class="min-h-screen">
 	<slot />
 </main>
+
+<footer class="w-full bg-black text-white h-14 flex flex-row-reverse">
+	<a
+		href="/about"
+		class="{$page.route.id == '/about'
+			? 'bg-brand-red'
+			: ''} p-4 hidden md:inline border-l-2 border-black hover:bg-brand-green">About</a
+	>
+</footer>

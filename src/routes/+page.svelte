@@ -15,7 +15,7 @@
 <div class="w-full py-4">
 	<div class="w-11/12 mx-auto min-h-min h-3/6">
 		<h1 class="py-6">This Year's Capstones</h1>
-		<div class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-4">
+		<div class="flex flex-row flex-wrap justify-center items-center gap-4">
 			{#each projects as project}
 				{#if project.attributes.priority_display === true}
 					<ProjectDisplay

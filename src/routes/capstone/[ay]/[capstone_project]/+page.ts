@@ -16,7 +16,7 @@ export const load = (async ({ fetch, params }) => {
 	});
 
 	const res = await fetch(
-		`https://hcd-lab.student.rit.edu/hcd-hub/strapi/api/capstone-projects/${targetProject}?populate=deep,3`
+		`https://hcd-lab.student.rit.edu/hcd-hub/strapi/api/capstone-projects/${targetProject}?populate=deep,4`
 	);
 	data = await res.json();
 	console.log(data);

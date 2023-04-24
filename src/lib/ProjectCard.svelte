@@ -72,7 +72,7 @@
 		</p>
 	</div>
 	<div
-		class="w-full flex flex-row justify-between bg-black text-white border-t-2 border-black p-4 place-self-end transition-all duration-200"
+		class="w-full flex flex-row justify-between bg-black text-white border-2 border-white border-t-black p-4 place-self-end transition-all duration-200"
 	>
 		{#if Num_PFRs !== null || Num_Users !== null}
 			<div>

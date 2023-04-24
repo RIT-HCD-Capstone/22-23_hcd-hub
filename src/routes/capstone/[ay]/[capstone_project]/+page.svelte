@@ -33,20 +33,21 @@
 			<a
 				href={project.attributes.Link}
 				target="_blank"
-				class="place-self-center p-2 bg-black text-white border-2 border-black hover:transition-all duration-150 hover:border-white text-center"
+				class="place-self-center p-2 bg-black text-white border-2 border-black hover:transition-all duration-200 hover:border-brand-green hover:text-brand-green text-center"
 				>Project Website</a
 			>
 		{/if}
 	</div>
 	<section class="w-full md:w-1/2 my-4">
 		<h2>Project Contributors</h2>
-		{#each project.attributes.users.data as user}
+		{#each project.attributes.member_roles as role}
 			<UserCard
-				userId={user.id}
-				avatarLink={user.attributes.avatar?.data?.attributes?.formats?.thumbnail?.url}
-				username={user.attributes.username}
-				pronouns={user.attributes.pronouns}
-				title={user.attributes.title}
+				userId={role.users_permissions_user.data.id}
+				avatarLink={role.users_permissions_user.data.attributes.avatar?.data?.attributes?.formats
+					?.thumbnail?.url}
+				username={role.users_permissions_user.data.attributes.name}
+				pronouns={role.users_permissions_user.data.attributes.pronouns}
+				title={role.role}
 			/>
 		{/each}
 	</section>

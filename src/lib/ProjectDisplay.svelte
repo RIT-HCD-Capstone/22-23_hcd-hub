@@ -35,7 +35,7 @@
 <a
 	href="/capstone/{URL}"
 	title={Title}
-	class="w-56 h-80 border-2 border-black {active
+	class="w-24 h-40 md:w-56 md:h-80 border-2 border-black {active
 		? 'inline'
 		: 'hidden'} bg-white transition-all duration-200 hover:drop-shadow-solid-0 drop-shadow-solid-1"
 >
@@ -44,9 +44,9 @@
 			<img
 				src="https://hcd-lab.student.rit.edu/hcd-hub/strapi{Logo}"
 				alt="{Title}'s logo"
-				class="h-56 w-56 border-b-2 bg-white border-black"
+				class="w-24 md:h-56 md:w-56 border-b-2 bg-white border-black"
 			/>
 		{/if}
-		<h2 class="flex-grow text-left px-4 text-3xl">{Title}</h2>
+		<h2 class="flex-grow text-left px-4 text-sm md:text-3xl">{Title}</h2>
 	</div>
 </a>
