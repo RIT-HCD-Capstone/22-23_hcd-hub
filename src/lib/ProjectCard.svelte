@@ -44,6 +44,7 @@
 
 <a
 	href="/capstone/{URL}"
+	title={Title}
 	class="bg-slate-50 border-2 border-black hover:bg-slate-50 flex flex-col min-h-[22rem] transition-all duration-200 hover:drop-shadow-solid-0 drop-shadow-solid-1"
 >
 	<div class="bg-slate-50 flex flex-col h-full">
@@ -57,9 +58,9 @@
 			{/if}
 			<div class="flex flex-row w-full items-baseline justify-around">
 				{#if Logo !== null}
-					<h2 class="flex-grow max-w-[12ch] truncate" title={Title}>{Title}</h2>
+					<h2 class="flex-grow max-w-[12ch] truncate">{Title}</h2>
 				{:else}
-					<h2 class="flex-grow truncate px-4" title={Title}>{Title}</h2>
+					<h2 class="flex-grow truncate px-4">{Title}</h2>
 				{/if}
 				<h3 class="text-neutral-500 justify-self-end hover:underline pr-4">
 					<a href="/capstone/{Annual_Year}">{Annual_Year.slice(4, 9)}</a>
@@ -71,15 +72,23 @@
 		</p>
 	</div>
 	<div
-		class="w-full flex flex-row justify-between bg-gradient-to-br from-violet-600 to-indigo-600 text-white border-t-2 border-black p-4 place-self-end"
+		class="w-full flex flex-row justify-between bg-black text-white border-t-2 border-black p-4 place-self-end transition-all duration-200"
 	>
 		{#if Num_PFRs !== null || Num_Users !== null}
 			<div>
 				{#if Num_Users !== null}
-					<p>Project Members: {Num_Users}</p>
+					<p
+						class="underline decoration-2 decoration-brand-blue hover:text-brand-blue transition-all duration-200"
+					>
+						Project Members: {Num_Users}
+					</p>
 				{/if}
 				{#if Num_PFRs !== null}
-					<p>PFRs: {Num_PFRs}</p>
+					<p
+						class="underline decoration-2 decoration-brand-red hover:text-brand-red transition-all duration-200"
+					>
+						PFRs: {Num_PFRs}
+					</p>
 				{/if}
 			</div>
 		{/if}
@@ -87,7 +96,7 @@
 			<a
 				href={Link}
 				target="_blank"
-				class="place-self-end p-2 bg-black border-2 border-black hover:transition-all duration-150 hover:border-white text-center"
+				class="place-self-end p-2 bg-black border-2 border-white hover:transition-all duration-150 hover:border-brand-green hover:text-brand-green text-center"
 				>Project Website</a
 			>
 		{/if}

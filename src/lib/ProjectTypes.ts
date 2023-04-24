@@ -14,6 +14,7 @@ export interface CapstoneProject {
 		public_facing_reports: AllPFRs;
 		Link: string;
 		users: MultipleUsers;
+		priority_display: boolean;
 		proposal: {
 			data: {
 				attributes: {
@@ -201,6 +202,8 @@ export interface User {
 export interface GroupedUser {
 	id: number;
 	attributes: {
+		pronouns: string;
+		title: string;
 		username: string;
 		email: string;
 		provider: string;

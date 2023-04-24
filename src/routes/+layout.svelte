@@ -3,18 +3,36 @@
 	import '../app.css';
 </script>
 
-<nav class="w-full bg-gradient-to-br from-violet-600 to-indigo-600 text-white h-14">
+<!-- <nav class="w-full bg-gradient-to-br from-violet-600 to-indigo-600 text-white h-14"> -->
+<!-- <nav class="w-full bg-gradient-to-r from-brand-blue via-brand-green to-brand-red text-white h-14"> -->
+<nav class="w-full bg-black text-white h-14 sticky">
 	<div class="md:w-11/12 mx-auto flex flex-row flex-nowrap items-center justify-end">
 		<!-- TODO add logo -->
-		<p class="text-xl flex-grow pl-4 md:pl-0">
-			{$page.data.url ? '' : 'HCD Hub'}
+		<a href="/" class="text-xl flex-grow pl-4 md:pl-0 font-bold">
+			<span class="text-brand-red">H</span><span class="text-brand-green">C</span><span
+				class="text-brand-blue">D</span
+			>
+			Hub
 			<!-- {$page.data.url ? '' : 'Humanities, Computing, and Design Hub'} -->
-		</p>
-		<a href="/" class="p-4 border-l-2 border-black hover:bg-black">Home</a>
-		<a href="/" class="p-4 hidden md:inline border-l-2 border-black hover:bg-black">Years</a>
-		<a href="/" class="p-4 hidden md:inline border-l-2 border-black hover:bg-black">All Projects</a>
-		<a href="/" class="p-4 hidden md:inline border-l-2 border-black hover:bg-black">About</a>
-		<a href="/" class="p-4 md:border-r-2 border-l-2 border-black hover:bg-black">Log In</a>
+		</a>
+		<a
+			href="/"
+			class="{$page.route.id == '/'
+				? 'bg-brand-red'
+				: ''} p-4 border-l-2 border-black hover:bg-brand-green">Home</a
+		>
+		<a
+			href="/about"
+			class="{$page.route.id == '/about'
+				? 'bg-brand-red'
+				: ''} p-4 hidden md:inline border-l-2 border-black hover:bg-brand-green">About</a
+		>
+		<a
+			href="/auth"
+			class="{$page.route.id == '/auth'
+				? 'bg-brand-red'
+				: ''} p-4 md:border-r-2 border-l-2 border-black hover:bg-brand-green">Log In</a
+		>
 	</div>
 </nav>
 <main>

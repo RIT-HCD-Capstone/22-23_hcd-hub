@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { CapstoneProject } from '$lib/ProjectTypes';
 	import UserCard from '$lib/UserCard.svelte';
+	import PFR from '$lib/PFR.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -24,10 +25,10 @@
 	<h1 class="my-4 p-4">{project.attributes.Title}</h1>
 </header>
 <div class="w-11/12 m-auto flex flex-row flex-wrap mt-8">
-	<div class="w-full md:w-1/2">
+	<div class="w-full md:w-1/2 max-w-prose">
 		<p>{project.attributes.Description}</p>
 	</div>
-	<div class="w-full md:w-1/2 flex justify-center items-center">
+	<div class="w-full md:w-1/2 flex justify-center items-center mt-4">
 		{#if project.attributes.Link !== null}
 			<a
 				href={project.attributes.Link}
@@ -37,33 +38,26 @@
 			>
 		{/if}
 	</div>
-	<section class="w-full md:w-1/2">
+	<section class="w-full md:w-1/2 my-4">
 		<h2>Project Contributors</h2>
 		{#each project.attributes.users.data as user}
 			<UserCard
 				userId={user.id}
 				avatarLink={user.attributes.avatar?.data?.attributes?.formats?.thumbnail?.url}
 				username={user.attributes.username}
+				pronouns={user.attributes.pronouns}
+				title={user.attributes.title}
 			/>
 		{/each}
 	</section>
-	<aside class="w-full md:w-1/2">
+	<aside class="w-full md:w-1/2 my-4">
 		<h2>Public Facing Reports</h2>
 		{#each project.attributes.public_facing_reports.data as report}
-			<article class="pb-2 border-b last:border-none border-black">
-				<header class="flex flex-row items-baseline">
-					<h3>{report.attributes.Title}</h3>
-					<p class="pl-2 text-sm text-neutral-500">{report.attributes.Date}</p>
-				</header>
-				<p class="">{report.attributes.Report}</p>
-			</article>
+			<PFR
+				title={report.attributes.Title}
+				date={report.attributes.Date}
+				report={report.attributes.Report}
+			/>
 		{/each}
 	</aside>
-	<!-- <section class="bg-red-800 w-full h-full">
-		<img
-			src="https://hcd-lab.student.rit.edu/hcd-hub/strapi/
-			{project.attributes.proposal.data.attributes.Document.data.attributes.url}"
-			alt=""
-		/>
-	</section> -->
 </div>
