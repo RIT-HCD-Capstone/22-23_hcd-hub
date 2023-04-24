@@ -28,7 +28,7 @@
 				: ''} p-4 hidden md:inline border-l-2 border-black hover:bg-brand-green">About</a
 		>
 		<a
-			href="/auth"
+			href="https://hcd-lab.student.rit.edu/hcd-hub/strapi/api/connect/auth0"
 			class="{$page.route.id == '/auth'
 				? 'bg-brand-red'
 				: ''} p-4 md:border-r-2 border-l-2 border-black hover:bg-brand-green">Log In</a
