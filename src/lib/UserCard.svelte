@@ -14,7 +14,7 @@
 		<img
 			src="https://hcd-lab.student.rit.edu/hcd-hub/strapi{avatarLink}"
 			alt="{username}'s avatar"
-			class="max-h-16 min-h-[4rem] border-r-2 border-b-2 border-black bg-slate-500"
+			class="max-h-16 min-h-[4rem] max-w-[4rem] border-r-2 border-b-2 border-black bg-slate-500"
 		/>
 		<div>
 			<h3>{username}</h3>
