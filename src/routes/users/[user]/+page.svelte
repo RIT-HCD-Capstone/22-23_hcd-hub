@@ -23,7 +23,7 @@
 	<section class="md:w-1/2">
 		<h2>About Me</h2>
 		{#if user.description !== ''}
-			<p>{user.description}</p>
+			<p class="max-w-prose">{user.description}</p>
 		{:else}
 			<p>seems like this user should write an "about me" section.</p>
 		{/if}

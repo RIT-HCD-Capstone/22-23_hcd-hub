@@ -40,16 +40,18 @@
 	</div>
 	<section class="w-full md:w-1/2 my-4">
 		<h2>Project Contributors</h2>
-		{#each project.attributes.member_roles as role}
-			<UserCard
-				userId={role.users_permissions_user.data.id}
-				avatarLink={role.users_permissions_user.data.attributes.avatar?.data?.attributes?.formats
-					?.thumbnail?.url}
-				username={role.users_permissions_user.data.attributes.name}
-				pronouns={role.users_permissions_user.data.attributes.pronouns}
-				title={role.role}
-			/>
-		{/each}
+		<div class="flex flex-col gap-4">
+			{#each project.attributes.member_roles as role}
+				<UserCard
+					userId={role.users_permissions_user.data.id}
+					avatarLink={role.users_permissions_user.data.attributes.avatar?.data?.attributes?.formats
+						?.thumbnail?.url}
+					username={role.users_permissions_user.data.attributes.name}
+					pronouns={role.users_permissions_user.data.attributes.pronouns}
+					title={role.role}
+				/>
+			{/each}
+		</div>
 	</section>
 	<aside class="w-full md:w-1/2 my-4">
 		<h2>Public Facing Reports</h2>
